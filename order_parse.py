@@ -2,7 +2,7 @@ import requests
 import json
 import csv
 
-# An example using DigiCert's API to parse order details for specific details. 
+# An example using DigiCert's API to parse order information for specific details. 
 # In this case the goal was to get the api_key name and type per active order ("not renewed" and has an "issued" order status). 
 # Usage: Just enter your DigiCert api key below. A report called "order.csv" will be exported locally. This may take a few minutes to generate depending on account size.
 

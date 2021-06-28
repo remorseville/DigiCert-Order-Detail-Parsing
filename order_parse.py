@@ -2,6 +2,9 @@ import requests
 import json
 import csv
 
+# An example using DigiCert's API to parse order details for specific details. 
+# In this case the goal was to get the api_key name and type per active order (not "not renewed" and has an "issued" order status. 
+# Usage: Just enter your DigiCert api key below. A report called "order.csv" will be exported locally. This may take a few minutes to generate depending on account size.
 
 api_key = ""  # DigiCert API Key
 
@@ -19,7 +22,7 @@ def all_order_details():
         res = requests.request("GET", all_orders_url, headers=headers)
         data = res.text
         all_order_data = json.loads(data)
-        #print(json_data)
+        print(json_data)
 
         for orders in all_order_data["orders"]:
             order_id = orders["id"]

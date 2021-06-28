@@ -31,7 +31,7 @@ def all_order_details():
             data_2 = res.text
             order_data = json.loads(data_2)
             
-            if not order_data["is_renewed"]:
+            if not order_data["is_renewed"] and order_data["status"] == "issued":
                 if "api_key" in order_data:
                     print(order_id, order_data["api_key"])
                     writer.writerow([order_id, order_data["api_key"]["name"], order_data["api_key"]["key_type"]])
